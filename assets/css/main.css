@@ -1113,9 +1113,9 @@ body.loaded {
 }
 .hero-image-box img {
 	border-radius: 38px;
-	-webkit-transform: rotate(4.29deg);
-	-ms-transform: rotate(4.29deg);
-	transform: rotate(4.29deg);
+	-webkit-transform: rotate(0);
+	-ms-transform: rotate(0);
+	transform: rotate(0);
 	position: relative;
 	border: 2px solid var(--tj-theme-secondary);
 	-webkit-transition: 0.3s;
@@ -1125,9 +1125,10 @@ body.loaded {
 
 .hero-image-box img:hover {
 	border: 2px solid var(--tj-theme-primary);
-	-webkit-transform: rotate(0);
-	-ms-transform: rotate(0);
-	transform: rotate(0);
+
+	-webkit-transform: rotate(4.29deg);
+	-ms-transform: rotate(4.29deg);
+	transform: rotate(4.29deg);
 }
 
 .hero-image-box {
