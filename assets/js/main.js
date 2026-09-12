@@ -50,25 +50,15 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 	$(document).ready(function ($) {
 		/*------------------------------------------------------
-  	/  Sticky Header
-  	/------------------------------------------------------*/
-		var lastScrollTop = 0;
-		$(window).scroll(function () {
+		/  Unified Header Scroll (Smooth, Zero Bounce Glitches)
+		/------------------------------------------------------*/
+		$(window).on("scroll", function () {
 			var scroll = $(window).scrollTop();
-
-			if (scroll > 300) {
-				$(".tj-header-area.header-sticky").addClass("sticky");
-				$(".tj-header-area.header-sticky").removeClass("sticky-out");
-			} else if (scroll < lastScrollTop) {
-				if (scroll < 500) {
-					$(".tj-header-area.header-sticky").addClass("sticky-out");
-					$(".tj-header-area.header-sticky").removeClass("sticky");
-				}
+			if (scroll > 20) {
+				$("#site-header").addClass("scrolled");
 			} else {
-				$(".tj-header-area.header-sticky").removeClass("sticky");
+				$("#site-header").removeClass("scrolled");
 			}
-
-			lastScrollTop = scroll;
 		});
 
 		/*------------------------------------------------------
@@ -402,8 +392,8 @@ Description: Gerold - Personal Portfolio HTML5 Template
 				},
 
 				messages: {
-					conName: "نام خود را وارد کنید",
-					conEmail: "ایمیل معتبر وارد نمایید",
+					conName: "Please enter your name or organization",
+					conEmail: "Please enter a valid email address",
 				},
 				submitHandler: function (form) {
 					// start ajax request
@@ -425,5 +415,47 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			});
 		}
 		/* !contact form */
+
+		/*------------------------------------------------------
+		/  Hero Live AI Pipeline Simulation & Telemetry
+		/------------------------------------------------------*/
+		var isSimulating = false;
+		$("#telemetry-simulate-btn").on("click", function () {
+			if (isSimulating) return;
+			isSimulating = true;
+			var $btn = $(this);
+			$btn.prop("disabled", true).addClass("running");
+			
+			var $steps = $("#hero-pipeline-track .t-step");
+			$steps.removeClass("active processing");
+			
+			var idx = 0;
+			function runNextStep() {
+				if (idx < $steps.length) {
+					$steps.eq(idx).addClass("processing");
+					setTimeout(function () {
+						$steps.eq(idx).removeClass("processing").addClass("active");
+						idx++;
+						runNextStep();
+					}, 260);
+				} else {
+					var randomTok = Math.floor(Math.random() * 35) + 128;
+					$("#t-metric-tok").html(randomTok + ' <span class="t-unit">tok/s</span>');
+					$btn.prop("disabled", false).removeClass("running");
+					isSimulating = false;
+				}
+			}
+			runNextStep();
+		});
+
+		function updateTelemetryClock() {
+			var now = new Date();
+			var h = String(now.getUTCHours()).padStart(2, '0');
+			var m = String(now.getUTCMinutes()).padStart(2, '0');
+			var s = String(now.getUTCSeconds()).padStart(2, '0');
+			$("#telemetry-clock").text(h + ":" + m + ":" + s + " UTC");
+		}
+		setInterval(updateTelemetryClock, 1000);
+		updateTelemetryClock();
 	});
 })(jQuery);
