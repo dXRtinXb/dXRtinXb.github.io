@@ -3,11 +3,12 @@
    Artin Abbasi Portfolio - Classic Navy, Warm Cream & Muted Bronze System
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-fa: 'Vazirmatn', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
 
   /* Color System */
   --bg-deep: #0D141B;
@@ -1603,3 +1604,404 @@ textarea.eng-form-control {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
+/* ==========================================================================
+   MINIMAL ELEGANT LANGUAGE SWITCHER (EN / FA)
+   ========================================================================== */
+.lang-switcher-wrap {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(13, 20, 27, 0.85);
+  border: 1px solid var(--border-bronze);
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  gap: 3px;
+  backdrop-filter: blur(8px);
+  user-select: none;
+}
+
+.lang-switch-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.lang-switch-btn:hover {
+  color: var(--text-primary);
+  background: rgba(238, 231, 218, 0.05);
+}
+
+.lang-switch-btn.active {
+  background: rgba(164, 136, 110, 0.22);
+  color: var(--accent-bronze-light);
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(164, 136, 110, 0.15);
+}
+
+.lang-divider {
+  color: var(--border-bronze);
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* Mobile drawer language switcher */
+.mobile-lang-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 12px;
+}
+
+.mobile-lang-row span {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   PERSIAN RTL (FA) ARCHITECTURAL DESIGN SYSTEM
+   Authentic typographic scaling, line heights, and directional hierarchy
+   ========================================================================== */
+html[dir="rtl"],
+body.rtl-mode {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-fa);
+}
+
+html[dir="rtl"] p,
+html[dir="rtl"] .capability-desc,
+html[dir="rtl"] .project-brief,
+html[dir="rtl"] .spec-column p,
+html[dir="rtl"] .section-subtitle-editorial,
+html[dir="rtl"] .commit-item p,
+html[dir="rtl"] .modal-body p {
+  line-height: 1.85;
+  font-feature-settings: "ss01" on;
+}
+
+html[dir="rtl"] .section-title-editorial,
+html[dir="rtl"] .hero-title,
+html[dir="rtl"] .project-main-title,
+html[dir="rtl"] .capability-title,
+html[dir="rtl"] .resume-column-title,
+html[dir="rtl"] .brand-title {
+  font-family: var(--font-fa);
+  letter-spacing: normal;
+}
+
+html[dir="rtl"] .hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 620px;
+}
+
+/* Header & Navigation RTL */
+html[dir="rtl"] .brand-terminal-symbol {
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+html[dir="rtl"] .brand-role {
+  letter-spacing: 0.02em;
+}
+
+html[dir="rtl"] .header-menu nav ul {
+  padding-right: 0;
+}
+
+html[dir="rtl"] .header-cta-btn i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+html[dir="rtl"] .status-dot {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+/* Mobile Drawer RTL (Slide in from Left) */
+@media (max-width: 991px) {
+  html[dir="rtl"] .eng-header .header-menu,
+  html[dir="rtl"] .tj-header-area .header-menu {
+    right: auto;
+    left: 0;
+    border-left: none;
+    border-right: 1px solid var(--border-bronze);
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.7);
+    transform: translateX(-100%);
+  }
+
+  html[dir="rtl"] .eng-header .header-menu.opened,
+  html[dir="rtl"] .tj-header-area .header-menu.opened {
+    transform: translateX(0);
+  }
+
+  html[dir="rtl"] .eng-header .header-menu nav ul,
+  html[dir="rtl"] .tj-header-area .header-menu nav ul {
+    align-items: flex-start;
+    padding-right: 0;
+  }
+}
+
+/* Hero Section RTL */
+html[dir="rtl"] .hero-meta-badges {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .hero-cta-group {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .hero-cta-primary i,
+html[dir="rtl"] .hero-cta-secondary i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Telemetry Console RTL */
+html[dir="rtl"] .telemetry-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .telemetry-header {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .telemetry-step-item {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .telemetry-step-num {
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+html[dir="rtl"] .telemetry-step-status {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html[dir="rtl"] .telemetry-metric-item {
+  text-align: right;
+}
+
+html[dir="rtl"] .telemetry-footer-bar {
+  flex-direction: row;
+}
+
+/* Capabilities RTL */
+html[dir="rtl"] .capability-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .capability-card-header {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .capability-tags {
+  justify-content: flex-start;
+}
+
+/* Projects RTL */
+html[dir="rtl"] .project-card-refined {
+  text-align: right;
+}
+
+html[dir="rtl"] .project-header-left {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .project-id-tag {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+html[dir="rtl"] .spec-column {
+  text-align: right;
+  border-right: none;
+  border-left: 1px solid var(--border-subtle);
+}
+
+html[dir="rtl"] .spec-column:last-child {
+  border-left: none;
+}
+
+@media (max-width: 991px) {
+  html[dir="rtl"] .spec-column {
+    border-left: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+}
+
+html[dir="rtl"] .project-footer-bar {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .project-link-btn i {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+/* Architecture Diagrams & Code Isolation (STRICT LTR PRESERVATION) */
+html[dir="rtl"] .flow-node-track,
+html[dir="rtl"] .architecture-ascii-block,
+html[dir="rtl"] .terminal-window,
+html[dir="rtl"] .terminal-body,
+html[dir="rtl"] .terminal-input-row,
+html[dir="rtl"] .terminal-prompt-symbol,
+html[dir="rtl"] .terminal-input-field,
+html[dir="rtl"] code,
+html[dir="rtl"] pre,
+html[dir="rtl"] .mono-badge-code,
+html[dir="rtl"] .ltr-code {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate;
+}
+
+html[dir="rtl"] .flow-node-track {
+  overflow-x: auto;
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .diagram-toggle-btns {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Tech Stack RTL */
+html[dir="rtl"] .tech-group-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .tech-group-header {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .tech-group-header i {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+html[dir="rtl"] .tech-item-row {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .tech-item-meta {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .tech-icon-img,
+html[dir="rtl"] .tech-item-meta i {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+html[dir="rtl"] .tech-item-role {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Timeline / Provenance Git Commit Stream RTL */
+html[dir="rtl"] .timeline-commit-stream {
+  border-left: none;
+  border-right: 1px dashed var(--border-bronze);
+  padding-left: 0;
+  padding-right: 22px;
+}
+
+html[dir="rtl"] .commit-item::before {
+  left: auto;
+  right: -27px;
+}
+
+html[dir="rtl"] .commit-meta {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .commit-meta span:first-child {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Terminal Simulator RTL Header & Shortcuts */
+html[dir="rtl"] .terminal-header {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .terminal-shortcuts {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .terminal-shortcuts span {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Contact Section RTL */
+html[dir="rtl"] .contact-info-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .contact-info-item {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .contact-icon-box {
+  margin-right: 0;
+  margin-left: 16px;
+}
+
+html[dir="rtl"] .contact-meta-val {
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: isolate;
+}
+
+html[dir="rtl"] .eng-form-group {
+  text-align: right;
+}
+
+html[dir="rtl"] .eng-form-control {
+  text-align: right;
+}
+
+html[dir="rtl"] #btn-submit-contact i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Footer RTL */
+html[dir="rtl"] .tj-footer-area {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-meta-line {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .footer-meta-line span:last-child {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Notification Toast in RTL */
+html[dir="rtl"] .copy-toast {
+  right: auto;
+  left: 24px;
+  font-family: var(--font-fa);
+}
+

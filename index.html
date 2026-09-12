@@ -16,10 +16,10 @@
    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230D141B'/%3E%3Cpath d='M8 10l6 6-6 6M16 22h8' stroke='%23C5A880' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230D141B'/%3E%3Cpath d='M8 10l6 6-6 6M16 22h8' stroke='%23C5A880' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
 
-   <!-- Typography -->
+   <!-- Typography (Plus Jakarta Sans + JetBrains Mono + Vazirmatn for Persian) -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
    <!-- Core Vendor Stylesheets -->
    <link rel="stylesheet" href="assets/css/animate.min.css">
@@ -82,7 +82,7 @@
                      </div>
                      <div class="brand-title">
                         <span class="brand-name">Artin Abbasi</span>
-                        <span class="brand-role">// AI Systems Engineer</span>
+                        <span class="brand-role" data-i18n="brand_role">// AI Systems Engineer</span>
                      </div>
                   </a>
                </div>
@@ -91,26 +91,42 @@
                <div class="header-menu d-none d-lg-block">
                   <nav>
                      <ul>
-                        <li><a href="#intro">// 00. INIT</a></li>
-                        <li><a href="#capabilities-section">// 01. CAPABILITIES</a></li>
-                        <li><a href="#projects-section">// 02. PROJECTS</a></li>
-                        <li><a href="#stack-section">// 03. STACK</a></li>
-                        <li><a href="#experience-section">// 04. EXPERIENCE</a></li>
-                        <li><a href="#terminal-section">// 05. TERMINAL</a></li>
-                        <li><a href="#contact-section">// 06. CONTACT</a></li>
+                        <li class="d-lg-none">
+                           <div class="mobile-lang-row">
+                              <span>LANGUAGE / زبان:</span>
+                              <div class="lang-switcher-wrap">
+                                 <button type="button" class="lang-switch-btn active" data-lang="en">EN</button>
+                                 <span class="lang-divider">/</span>
+                                 <button type="button" class="lang-switch-btn" data-lang="fa">FA</button>
+                              </div>
+                           </div>
+                        </li>
+                        <li><a href="#intro" data-i18n="nav_init">// 00. INIT</a></li>
+                        <li><a href="#capabilities-section" data-i18n="nav_capabilities">// 01. CAPABILITIES</a></li>
+                        <li><a href="#projects-section" data-i18n="nav_projects">// 02. PROJECTS</a></li>
+                        <li><a href="#stack-section" data-i18n="nav_stack">// 03. STACK</a></li>
+                        <li><a href="#experience-section" data-i18n="nav_experience">// 04. EXPERIENCE</a></li>
+                        <li><a href="#contact-section" data-i18n="nav_contact">// 05. CONTACT</a></li>
                      </ul>
                   </nav>
                </div>
 
                <!-- Right Action & System Status -->
                <div class="header-action-wrap d-flex align-items-center gap-3">
+                  <!-- Language Switcher (EN / FA) -->
+                  <div class="lang-switcher-wrap" id="lang-switcher" aria-label="Language selector">
+                     <button type="button" class="lang-switch-btn active" data-lang="en" id="btn-lang-en" title="English Interface" aria-pressed="true">EN</button>
+                     <span class="lang-divider">/</span>
+                     <button type="button" class="lang-switch-btn" data-lang="fa" id="btn-lang-fa" title="نسخه فارسی" aria-pressed="false">FA</button>
+                  </div>
+
                   <div class="mono-badge bronze d-none d-sm-inline-flex">
                      <span class="status-dot"></span>
-                     <span>SYS: OPERATIONAL</span>
+                     <span data-i18n="sys_operational">SYS: OPERATIONAL</span>
                   </div>
                   <a href="#contact-section" class="header-cta-btn">
                      <i class="far fa-paper-plane"></i>
-                     <span>Contact</span>
+                     <span data-i18n="contact_btn">Contact</span>
                   </a>
                   <div class="menu-bar d-lg-none">
                      <button aria-label="Toggle Navigation">
@@ -143,33 +159,34 @@
                      <div class="hero-meta-strip wow fadeInUp" data-wow-delay=".1s">
                         <span class="mono-badge bronze">
                            <span class="status-dot"></span>
-                           <span>AI SYSTEMS ENGINEER</span>
+                           <span data-i18n="hero_badge_status">AGENT RUNTIME: ACTIVE</span>
                         </span>
-                        <span class="mono-badge">SPEC: AGENTS &bull; RAG &bull; SEARCH</span>
-                        <span class="mono-badge d-none d-md-inline-block">ENV: PRODUCTION // LINUX</span>
+                        <span class="mono-badge" data-i18n="hero_meta_agents">AUTONOMOUS AGENTS</span>
+                        <span class="mono-badge" data-i18n="hero_meta_rag">HYBRID RAG</span>
+                        <span class="mono-badge d-none d-md-inline-block" data-i18n="hero_meta_search">NEURAL SEARCH</span>
                      </div>
 
-                     <h1 class="hero-title-refined wow fadeInUp" data-wow-delay=".2s">
+                     <h1 class="hero-title-refined wow fadeInUp" data-wow-delay=".2s" data-i18n="hero_title_lead">
                         Architecting <span class="highlight-text">Autonomous Agents</span> &amp; <span class="highlight-sub">LLM Intelligence</span> Systems
                      </h1>
 
-                     <p class="hero-lead-text wow fadeInUp" data-wow-delay=".3s">
-                        I design and build production-grade AI systems, multi-agent reasoning workflows, neural retrieval pipelines (RAG), and web intelligence engines. Transforming advanced machine learning into resilient, deterministic engineering environments.
+                     <p class="hero-lead-text wow fadeInUp" data-wow-delay=".3s" data-i18n="hero_desc">
+                        Specializing in agentic state workflows, dense-sparse neural retrieval, cross-encoder reranking, and deterministic tool execution. Transforming probabilistic language models into deterministic enterprise engines.
                      </p>
 
                      <!-- CTA Actions Group -->
                      <div class="hero-actions-group wow fadeInUp" data-wow-delay=".4s">
                         <a href="#projects-section" class="btn-eng-primary" id="hero-explore-projects">
-                           <span>View Architecture &amp; Projects</span>
+                           <span data-i18n="hero_cta_projects">View Architecture &amp; Projects</span>
                            <i class="fal fa-arrow-right"></i>
                         </a>
-                        <a href="#terminal-section" class="btn-eng-secondary" id="hero-open-terminal">
-                           <i class="far fa-terminal"></i>
-                           <span>Launch CLI Inspector</span>
+                        <a href="#contact-section" class="btn-eng-secondary" id="hero-contact-cta">
+                           <i class="far fa-paper-plane"></i>
+                           <span data-i18n="hero_cta_contact">Initialize Contact</span>
                         </a>
                         <button type="button" class="btn-eng-secondary copy-email-btn" id="hero-copy-email">
                            <i class="far fa-copy"></i>
-                           <span>Copy Email</span>
+                           <span data-i18n="btn_copy_email">Copy Email</span>
                         </button>
                      </div>
 
@@ -202,7 +219,7 @@
                         </div>
                         <div class="telemetry-status-tag">
                            <span class="status-dot"></span>
-                           <span>LIVE &bull; 14ms</span>
+                           <span data-i18n-html="telemetry_status">LIVE &bull; 14ms</span>
                         </div>
                      </div>
 
@@ -215,41 +232,41 @@
                               <span class="telemetry-engine-name"><i class="fas fa-brain me-1"></i> RAYAN-ORCHESTRATOR</span>
                               <span class="mono-badge bronze">v2.4-PROD</span>
                            </div>
-                           <div class="telemetry-engine-sub">Autonomous Multi-Agent StateGraph &bull; Active Loop</div>
+                           <div class="telemetry-engine-sub" data-i18n-html="telemetry_engine_sub">Autonomous Multi-Agent StateGraph &bull; Active Loop</div>
                         </div>
 
                         <!-- Live Pipeline Track -->
-                        <div class="telemetry-pipeline-label">ACTIVE EXECUTION PIPELINE</div>
+                        <div class="telemetry-pipeline-label" data-i18n="telemetry_pipeline_label">ACTIVE EXECUTION PIPELINE</div>
                         <div class="telemetry-pipeline-steps" id="hero-pipeline-track">
                            <div class="t-step active" data-step="1">
                               <div class="t-step-index">01</div>
                               <div class="t-step-info">
-                                 <div class="t-step-name">Intent Decomp</div>
-                                 <div class="t-step-meta">LangGraph Node</div>
+                                 <div class="t-step-name" data-i18n="t_step1_name">Intent Decomp</div>
+                                 <div class="t-step-meta" data-i18n-html="t_step1_meta">LangGraph Node</div>
                               </div>
                               <div class="t-step-status"><i class="fas fa-check"></i></div>
                            </div>
                            <div class="t-step active" data-step="2">
                               <div class="t-step-index">02</div>
                               <div class="t-step-info">
-                                 <div class="t-step-name">Hybrid Retrieval</div>
-                                 <div class="t-step-meta">BM25 + Qdrant Dense</div>
+                                 <div class="t-step-name" data-i18n="t_step2_name">Hybrid Retrieval</div>
+                                 <div class="t-step-meta" data-i18n-html="t_step2_meta">BM25 + Qdrant Dense</div>
                               </div>
                               <div class="t-step-status"><i class="fas fa-check"></i></div>
                            </div>
                            <div class="t-step active" data-step="3">
                               <div class="t-step-index">03</div>
                               <div class="t-step-info">
-                                 <div class="t-step-name">Cross-Encoder</div>
-                                 <div class="t-step-meta">Rerank Top-10 &bull; 12ms</div>
+                                 <div class="t-step-name" data-i18n="t_step3_name">Cross-Encoder</div>
+                                 <div class="t-step-meta" data-i18n-html="t_step3_meta">Rerank Top-10 &bull; 12ms</div>
                               </div>
                               <div class="t-step-status"><i class="fas fa-check"></i></div>
                            </div>
                            <div class="t-step active" data-step="4">
                               <div class="t-step-index">04</div>
                               <div class="t-step-info">
-                                 <div class="t-step-name">Sandboxed Action</div>
-                                 <div class="t-step-meta">Deterministic JSON Dispatch</div>
+                                 <div class="t-step-name" data-i18n="t_step4_name">Sandboxed Action</div>
+                                 <div class="t-step-meta" data-i18n-html="t_step4_meta">Deterministic JSON Dispatch</div>
                               </div>
                               <div class="t-step-status"><i class="fas fa-check"></i></div>
                            </div>
@@ -258,16 +275,16 @@
                         <!-- Real-time Stats Strip -->
                         <div class="telemetry-metrics-grid">
                            <div class="t-metric-item">
-                              <span class="t-metric-label">THROUGHPUT</span>
+                              <span class="t-metric-label" data-i18n="t_lbl_throughput">THROUGHPUT</span>
                               <span class="t-metric-value" id="t-metric-tok">136 <span class="t-unit">tok/s</span></span>
                            </div>
                            <div class="t-metric-item">
-                              <span class="t-metric-label">GUARDRAILS</span>
-                              <span class="t-metric-value text-success" id="t-metric-guard"><i class="fas fa-shield-check me-1"></i> VERIFIED</span>
+                              <span class="t-metric-label" data-i18n="t_lbl_guardrails">GUARDRAILS</span>
+                              <span class="t-metric-value text-success" id="t-metric-guard"><i class="fas fa-shield-check me-1"></i> <span data-i18n="t_val_guardrails">VERIFIED</span></span>
                            </div>
                            <div class="t-metric-item">
-                              <span class="t-metric-label">CHECKPOINT</span>
-                              <span class="t-metric-value" id="t-metric-chk">StateGraph</span>
+                              <span class="t-metric-label" data-i18n="t_lbl_checkpoint">CHECKPOINT</span>
+                              <span class="t-metric-value" id="t-metric-chk" data-i18n="t_val_checkpoint">StateGraph</span>
                            </div>
                         </div>
 
@@ -275,7 +292,7 @@
                         <div class="telemetry-footer">
                            <button type="button" class="telemetry-run-btn" id="telemetry-simulate-btn">
                               <i class="fas fa-play me-1"></i>
-                              <span>Simulate Pipeline Step</span>
+                              <span data-i18n="telemetry_simulate_btn">Simulate Pipeline Step</span>
                            </button>
                            <span class="telemetry-clock" id="telemetry-clock">00:00:00 UTC</span>
                         </div>
@@ -296,7 +313,7 @@
                            <span class="odometer" data-count="5">0</span>
                            <span class="unit">+</span>
                         </div>
-                        <div class="stat-label">Years of Engineering Experience</div>
+                        <div class="stat-label" data-i18n="stat1_label">Years of Engineering Experience</div>
                      </div>
                   </div>
                   <div class="col-6 col-md-3">
@@ -305,7 +322,7 @@
                            <span class="odometer" data-count="50">0</span>
                            <span class="unit">+</span>
                         </div>
-                        <div class="stat-label">Projects &amp; Repositories Completed</div>
+                        <div class="stat-label" data-i18n="stat2_label">Projects &amp; Repositories Completed</div>
                      </div>
                   </div>
                   <div class="col-6 col-md-3">
@@ -314,7 +331,7 @@
                            <span class="odometer" data-count="14">0</span>
                            <span class="unit">ms</span>
                         </div>
-                        <div class="stat-label">Average Pipeline Overhead</div>
+                        <div class="stat-label" data-i18n="stat3_label">Average Pipeline Overhead</div>
                      </div>
                   </div>
                   <div class="col-6 col-md-3">
@@ -323,7 +340,7 @@
                            <span class="odometer" data-count="100">0</span>
                            <span class="unit">%</span>
                         </div>
-                        <div class="stat-label">Open Architecture &amp; Python Standards</div>
+                        <div class="stat-label" data-i18n="stat4_label">Open Architecture &amp; Python Standards</div>
                      </div>
                   </div>
                </div>
@@ -338,9 +355,9 @@
          <div class="container">
             
             <div class="section-header-editorial wow fadeInUp" data-wow-delay=".2s">
-               <div class="section-index-tag">01 // CORE ARCHITECTURES</div>
-               <h2 class="section-title-editorial">Technical Disciplines &amp; System Capabilities</h2>
-               <p class="section-subtitle-editorial">
+               <div class="section-index-tag" data-i18n="sec1_tag">01 // CORE ARCHITECTURES</div>
+               <h2 class="section-title-editorial" data-i18n="sec1_title">Technical Disciplines &amp; System Capabilities</h2>
+               <p class="section-subtitle-editorial" data-i18n="sec1_subtitle">
                   Delivering production-grade AI infrastructure with deterministic execution guarantees, verifiable reasoning loops, and high-performance backend pipelines.
                </p>
             </div>
@@ -350,11 +367,11 @@
                <!-- Capability 1 -->
                <div class="capability-card wow fadeInUp" data-wow-delay=".2s" id="cap-agents">
                   <div class="capability-card-header">
-                     <span class="cap-number">01.0 // AGENTS</span>
+                     <span class="cap-number" data-i18n="cap1_num">01.0 // AGENTS</span>
                      <i class="fal fa-network-wired cap-icon"></i>
                   </div>
-                  <h3 class="capability-title">Autonomous AI Agents &amp; Multi-Agent Workflows</h3>
-                  <p class="capability-desc">
+                  <h3 class="capability-title" data-i18n="cap1_title">Autonomous AI Agents &amp; Multi-Agent Workflows</h3>
+                  <p class="capability-desc" data-i18n="cap1_desc">
                      Architecting stateful agent loops using LangGraph, ReAct frameworks, and state machines. Implementing persistent memory stores, deterministic JSON tool calling, context compression, and automatic error self-correction.
                   </p>
                   <div class="capability-tags">
@@ -368,11 +385,11 @@
                <!-- Capability 2 -->
                <div class="capability-card wow fadeInUp" data-wow-delay=".3s" id="cap-rag">
                   <div class="capability-card-header">
-                     <span class="cap-number">02.0 // RETRIEVAL</span>
+                     <span class="cap-number" data-i18n="cap2_num">02.0 // RETRIEVAL</span>
                      <i class="fal fa-database cap-icon"></i>
                   </div>
-                  <h3 class="capability-title">Neural Information Retrieval &amp; Hybrid RAG</h3>
-                  <p class="capability-desc">
+                  <h3 class="capability-title" data-i18n="cap2_title">Neural Information Retrieval &amp; Hybrid RAG</h3>
+                  <p class="capability-desc" data-i18n="cap2_desc">
                      Engineering enterprise retrieval pipelines combining sparse BM25 indices with dense vector embeddings (Chroma, Qdrant, pgvector). Applying cross-encoder rerankers, contextual query routing, and hallucination guardrails.
                   </p>
                   <div class="capability-tags">
@@ -386,11 +403,11 @@
                <!-- Capability 3 -->
                <div class="capability-card wow fadeInUp" data-wow-delay=".4s" id="cap-backend">
                   <div class="capability-card-header">
-                     <span class="cap-number">03.0 // BACKEND</span>
+                     <span class="cap-number" data-i18n="cap3_num">03.0 // BACKEND</span>
                      <i class="fal fa-server cap-icon"></i>
                   </div>
-                  <h3 class="capability-title">High-Performance AI Backends &amp; APIs</h3>
-                  <p class="capability-desc">
+                  <h3 class="capability-title" data-i18n="cap3_title">High-Performance AI Backends &amp; APIs</h3>
+                  <p class="capability-desc" data-i18n="cap3_desc">
                      Building async Python microservices with FastAPI and Django. Implementing real-time SSE token streaming, rate-limited model gateways, worker queues, and PostgreSQL transaction integrity within secure Linux containers.
                   </p>
                   <div class="capability-tags">
@@ -404,11 +421,11 @@
                <!-- Capability 4 -->
                <div class="capability-card wow fadeInUp" data-wow-delay=".5s" id="cap-ml">
                   <div class="capability-card-header">
-                     <span class="cap-number">04.0 // PREDICTION</span>
+                     <span class="cap-number" data-i18n="cap4_num">04.0 // PREDICTION</span>
                      <i class="fal fa-analytics cap-icon"></i>
                   </div>
-                  <h3 class="capability-title">Applied ML, Embeddings &amp; Predictive Modeling</h3>
-                  <p class="capability-desc">
+                  <h3 class="capability-title" data-i18n="cap4_title">Applied ML, Embeddings &amp; Predictive Modeling</h3>
+                  <p class="capability-desc" data-i18n="cap4_desc">
                      Developing custom feature engineering, time-series forecasting, and classification models using TensorFlow, PyTorch, and Scikit-Learn. Transforming unstructured telemetry and market feeds into actionable intelligence.
                   </p>
                   <div class="capability-tags">
@@ -430,9 +447,9 @@
          <div class="container">
             
             <div class="section-header-editorial wow fadeInUp" data-wow-delay=".2s">
-               <div class="section-index-tag">02 // ARCHITECTURE &amp; REPOSITORIES</div>
-               <h2 class="section-title-editorial">Featured AI Systems &amp; Technical Projects</h2>
-               <p class="section-subtitle-editorial">
+               <div class="section-index-tag" data-i18n="sec2_tag">02 // ARCHITECTURE &amp; REPOSITORIES</div>
+               <h2 class="section-title-editorial" data-i18n="sec2_title">Featured AI Systems &amp; Technical Projects</h2>
+               <p class="section-subtitle-editorial" data-i18n="sec2_subtitle">
                   In-depth architectural documentation of autonomous systems, web research engines, and quantitative machine learning pipelines.
                </p>
             </div>
@@ -449,57 +466,57 @@
                      <span class="project-id-tag"><i class="fas fa-terminal me-2"></i>sys://agent.rayan.architecture</span>
                   </div>
                   <div class="project-header-right">
-                     <span class="mono-badge bronze"><span class="status-dot"></span> PRODUCTION SYSTEM</span>
+                     <span class="mono-badge bronze"><span class="status-dot"></span> <span data-i18n="prod_system_badge">PRODUCTION SYSTEM</span></span>
                   </div>
                </div>
 
                <div class="project-body">
-                  <h3 class="project-main-title">RAYAN &mdash; Enterprise Autonomous AI Agent &amp; Systems Architecture</h3>
-                  <p class="project-brief">
+                  <h3 class="project-main-title" data-i18n-html="rayan_title">RAYAN &mdash; Enterprise Autonomous AI Agent &amp; Systems Architecture</h3>
+                  <p class="project-brief" data-i18n="rayan_brief">
                      A mission-critical autonomous agent system built for enterprise intelligence operations. Orchestrates multi-modal user queries through strict identity verification, stateful working memory, dense vector retrieval, and deterministic tool execution with full auditability.
                   </p>
 
                   <!-- 4-Column Technical Breakdown -->
                   <div class="project-spec-grid">
                      <div class="spec-column">
-                        <h4>WHAT IT IS</h4>
-                        <p>An enterprise-grade autonomous reasoning agent that converts high-level objectives into verified, multi-step system actions.</p>
+                        <h4 data-i18n="lbl_what_it_is">WHAT IT IS</h4>
+                        <p data-i18n="rayan_what">An enterprise-grade autonomous reasoning agent that converts high-level objectives into verified, multi-step system actions.</p>
                      </div>
                      <div class="spec-column">
-                        <h4>WHY IT EXISTS</h4>
-                        <p>Standard LLM chats lack long-term memory, deterministic safety guarantees, and auditable enterprise tool invocation.</p>
+                        <h4 data-i18n="lbl_why_it_exists">WHY IT EXISTS</h4>
+                        <p data-i18n="rayan_why">Standard LLM chats lack long-term memory, deterministic safety guarantees, and auditable enterprise tool invocation.</p>
                      </div>
                      <div class="spec-column">
-                        <h4>HOW IT WORKS</h4>
-                        <p>LangGraph state machine routing requests through identity filters, semantic retrieval, and sandboxed JSON function executors.</p>
+                        <h4 data-i18n="lbl_how_it_works">HOW IT WORKS</h4>
+                        <p data-i18n="rayan_how">LangGraph state machine routing requests through identity filters, semantic retrieval, and sandboxed JSON function executors.</p>
                      </div>
                      <div class="spec-column">
-                        <h4>WHAT MAKES IT SPECIAL</h4>
-                        <p>Zero-hallucination guardrails with fallback recovery loops and comprehensive provenance logging for every tool invocation.</p>
+                        <h4 data-i18n="lbl_what_makes_special">WHAT MAKES IT SPECIAL</h4>
+                        <p data-i18n="rayan_special">Zero-hallucination guardrails with fallback recovery loops and comprehensive provenance logging for every tool invocation.</p>
                      </div>
                   </div>
 
                   <!-- Architecture Flow Diagram -->
                   <div class="architecture-diagram-container" id="rayan-diagram-wrap">
                      <div class="architecture-diagram-header">
-                        <span><i class="fal fa-project-diagram me-2"></i> SYSTEM ARCHITECTURE SPECIFICATION</span>
+                        <span><i class="fal fa-project-diagram me-2"></i> <span data-i18n="arch_spec_title">SYSTEM ARCHITECTURE SPECIFICATION</span></span>
                         <div class="diagram-toggle-btns">
-                           <button type="button" class="diagram-toggle-btn active" data-target="rayan-diagram-wrap" data-mode="flow">Node Flow</button>
-                           <button type="button" class="diagram-toggle-btn" data-target="rayan-diagram-wrap" data-mode="ascii">ASCII Spec</button>
+                           <button type="button" class="diagram-toggle-btn active" data-target="rayan-diagram-wrap" data-mode="flow" data-i18n="btn_node_flow">Node Flow</button>
+                           <button type="button" class="diagram-toggle-btn" data-target="rayan-diagram-wrap" data-mode="ascii" data-i18n="btn_ascii_spec">ASCII Spec</button>
                         </div>
                      </div>
 
                      <!-- Visual Node Flow Track -->
                      <div class="flow-node-track">
-                        <div class="flow-step-node"><i class="fal fa-user"></i> USER</div>
+                        <div class="flow-step-node"><i class="fal fa-user"></i> <span data-i18n="node_user">USER</span></div>
                         <div class="flow-arrow">&rarr;</div>
-                        <div class="flow-step-node"><i class="fal fa-shield-check"></i> IDENTITY &amp; RBAC</div>
+                        <div class="flow-step-node"><i class="fal fa-shield-check"></i> <span data-i18n="node_identity">IDENTITY &amp; RBAC</span></div>
                         <div class="flow-arrow">&rarr;</div>
-                        <div class="flow-step-node"><i class="fal fa-brain"></i> ORCHESTRATOR AGENT</div>
+                        <div class="flow-step-node"><i class="fal fa-brain"></i> <span data-i18n="node_orchestrator">ORCHESTRATOR AGENT</span></div>
                         <div class="flow-arrow">&rarr;</div>
-                        <div class="flow-step-node"><i class="fal fa-microchip"></i> [MEMORY + TOOLS + DATA]</div>
+                        <div class="flow-step-node"><i class="fal fa-microchip"></i> <span data-i18n="node_memory_tools">[MEMORY + TOOLS + DATA]</span></div>
                         <div class="flow-arrow">&rarr;</div>
-                        <div class="flow-step-node"><i class="fal fa-check-circle"></i> VERIFIED ACTION &amp; AUDIT</div>
+                        <div class="flow-step-node"><i class="fal fa-check-circle"></i> <span data-i18n="node_verified">VERIFIED ACTION &amp; AUDIT</span></div>
                      </div>
 
                      <!-- ASCII Flow Spec (Hidden by default, toggleable) -->
@@ -532,7 +549,7 @@ AUDITED ACTION &amp; STRUCTURED OUTPUT</pre>
                      <div class="d-flex gap-2">
                         <a href="https://github.com/dXRtinXb" target="_blank" rel="noopener noreferrer" class="project-link-btn">
                            <i class="fa-brands fa-github"></i>
-                           <span>Inspect Repo</span>
+                           <span data-i18n="inspect_repo_btn">Inspect Repo</span>
                         </a>
                      </div>
                   </div>
@@ -552,55 +569,55 @@ AUDITED ACTION &amp; STRUCTURED OUTPUT</pre>
                      <span class="project-id-tag"><i class="fas fa-terminal me-2"></i>sys://pipeline.wie.research</span>
                   </div>
                   <div class="project-header-right">
-                     <span class="mono-badge bronze"><span class="status-dot"></span> DEEP RESEARCH ENGINE</span>
+                     <span class="mono-badge bronze"><span class="status-dot"></span> <span data-i18n="deep_research_badge">DEEP RESEARCH ENGINE</span></span>
                   </div>
                </div>
 
                <div class="project-body">
-                  <h3 class="project-main-title">WIE &mdash; Web Intelligence Engine (Deep Research Pipeline)</h3>
-                  <p class="project-brief">
+                  <h3 class="project-main-title" data-i18n-html="wie_title">WIE &mdash; Web Intelligence Engine (Deep Research Pipeline)</h3>
+                  <p class="project-brief" data-i18n="wie_brief">
                      An autonomous research system that takes complex open-ended hypotheses, deconstructs them into atomic search queries, executes parallel web discovery, scrapes and extracts semantic content, reranks findings, and synthesizes citation-grounded reports.
                   </p>
 
                   <div class="project-spec-grid">
                      <div class="spec-column">
-                        <h4>WHAT IT IS</h4>
-                        <p>An automated multi-agent deep research pipeline simulating the workflow of human investigative research analysts.</p>
+                        <h4 data-i18n="lbl_what_it_is">WHAT IT IS</h4>
+                        <p data-i18n="wie_what">An automated multi-agent deep research pipeline simulating the workflow of human investigative research analysts.</p>
                      </div>
                      <div class="spec-column">
-                        <h4>WHY IT EXISTS</h4>
-                        <p>Single-prompt LLM web searches suffer from shallow crawling, noisy ad-infested DOMs, and unsourced statements.</p>
+                        <h4 data-i18n="lbl_why_it_exists">WHY IT EXISTS</h4>
+                        <p data-i18n="wie_why">Single-prompt LLM web searches suffer from shallow crawling, noisy ad-infested DOMs, and unsourced statements.</p>
                      </div>
                      <div class="spec-column">
-                        <h4>HOW IT WORKS</h4>
-                        <p>Planner decomposes hypotheses &rarr; crawler fans out &rarr; cross-encoder reranks top paragraphs &rarr; evaluator synthesizes report.</p>
+                        <h4 data-i18n="lbl_how_it_works">HOW IT WORKS</h4>
+                        <p data-i18n="wie_how">Planner decomposes hypotheses &rarr; crawler fans out &rarr; cross-encoder reranks top paragraphs &rarr; evaluator synthesizes report.</p>
                      </div>
                      <div class="spec-column">
-                        <h4>WHAT MAKES IT SPECIAL</h4>
-                        <p>Recursive citation tracking with automatic corroboration scoring and headless scraper resilience against anti-bot challenges.</p>
+                        <h4 data-i18n="lbl_what_makes_special">WHAT MAKES IT SPECIAL</h4>
+                        <p data-i18n="wie_special">Recursive citation tracking with automatic corroboration scoring and headless scraper resilience against anti-bot challenges.</p>
                      </div>
                   </div>
 
                   <!-- Architecture Flow Diagram -->
                   <div class="architecture-diagram-container" id="wie-diagram-wrap">
                      <div class="architecture-diagram-header">
-                        <span><i class="fal fa-project-diagram me-2"></i> SYSTEM ARCHITECTURE SPECIFICATION</span>
+                        <span><i class="fal fa-project-diagram me-2"></i> <span data-i18n="arch_spec_title">SYSTEM ARCHITECTURE SPECIFICATION</span></span>
                         <div class="diagram-toggle-btns">
-                           <button type="button" class="diagram-toggle-btn active" data-target="wie-diagram-wrap" data-mode="flow">Node Flow</button>
-                           <button type="button" class="diagram-toggle-btn" data-target="wie-diagram-wrap" data-mode="ascii">ASCII Spec</button>
+                           <button type="button" class="diagram-toggle-btn active" data-target="wie-diagram-wrap" data-mode="flow" data-i18n="btn_node_flow">Node Flow</button>
+                           <button type="button" class="diagram-toggle-btn" data-target="wie-diagram-wrap" data-mode="ascii" data-i18n="btn_ascii_spec">ASCII Spec</button>
                         </div>
                      </div>
 
                      <div class="flow-node-track">
-                        <div class="flow-step-node"><i class="fal fa-search"></i> QUERY</div>
+                        <div class="flow-step-node"><i class="fal fa-search"></i> <span data-i18n="node_query">QUERY</span></div>
                         <div class="flow-arrow">&rarr;</div>
-                        <div class="flow-step-node"><i class="fal fa-sitemap"></i> PLANNER (FANOUT)</div>
+                        <div class="flow-step-node"><i class="fal fa-sitemap"></i> <span data-i18n="node_planner">PLANNER (FANOUT)</span></div>
                         <div class="flow-arrow">&rarr;</div>
-                        <div class="flow-step-node"><i class="fal fa-spider"></i> SEARCH &amp; CRAWL</div>
+                        <div class="flow-step-node"><i class="fal fa-spider"></i> <span data-i18n="node_search_crawl">SEARCH &amp; CRAWL</span></div>
                         <div class="flow-arrow">&rarr;</div>
-                        <div class="flow-step-node"><i class="fal fa-filter"></i> EXTRACT &amp; RERANK</div>
+                        <div class="flow-step-node"><i class="fal fa-filter"></i> <span data-i18n="node_extract_rerank">EXTRACT &amp; RERANK</span></div>
                         <div class="flow-arrow">&rarr;</div>
-                        <div class="flow-step-node"><i class="fal fa-file-alt"></i> SYNTHESIZED REPORT</div>
+                        <div class="flow-step-node"><i class="fal fa-file-alt"></i> <span data-i18n="node_synthesized">SYNTHESIZED REPORT</span></div>
                      </div>
 
                      <pre class="architecture-ascii-block" style="display: none;">
@@ -635,7 +652,7 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                      <div class="d-flex gap-2">
                         <a href="https://github.com/dXRtinXb" target="_blank" rel="noopener noreferrer" class="project-link-btn">
                            <i class="fa-brands fa-github"></i>
-                           <span>Inspect Repo</span>
+                           <span data-i18n="inspect_repo_btn">Inspect Repo</span>
                         </a>
                      </div>
                   </div>
@@ -643,83 +660,40 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                </div>
             </div>
 
-            <!-- PROJECTS ROW: DORREX & SEBASTIAN -->
-            <div class="row g-4 project-pair-row">
-               
-               <!-- DORREX -->
-               <div class="col-lg-6">
-                  <div class="project-card-refined h-100 wow fadeInUp" data-wow-delay=".3s" id="project-dorrex">
-                     <div class="project-header-bar">
-                        <div class="project-header-left">
-                           <div class="window-dots"><span></span><span></span><span></span></div>
-                           <span class="project-id-tag">sys://ml.dorrex.forecast</span>
-                        </div>
-                        <span class="mono-badge bronze">ML ENGINE</span>
-                     </div>
-                     <div class="project-body d-flex flex-column h-100">
-                        <h3 class="project-main-title" style="font-size: 1.4rem;">Dorrex &mdash; Market Predictive ML Engine</h3>
-                        <p class="project-brief" style="font-size: 0.94rem;">
-                           Quantitative financial predictive system combining recurrent neural networks (LSTM) with multi-source market sentiment signals for cryptocurrency trend probability modeling.
-                        </p>
-                        <div style="background: var(--bg-deep); padding: 14px; border-radius: 4px; border: 1px solid var(--border-subtle); margin-bottom: 20px;">
-                           <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-bronze-light); margin-bottom: 6px;">DATA PIPELINE:</div>
-                           <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-cream);">
-                              Exchange WebSocket &rarr; Rolling Window Normalization &rarr; Multi-Layer LSTM &rarr; Confidence Intervals
-                           </div>
-                        </div>
-                        <div class="project-footer-bar mt-auto">
-                           <div class="project-stack-tags">
-                              <span class="mono-badge">TensorFlow</span>
-                              <span class="mono-badge">Python</span>
-                              <span class="mono-badge">Time-Series</span>
-                              <span class="mono-badge">Pandas</span>
-                           </div>
-                           <a href="https://github.com/dXRtinXb" target="_blank" rel="noopener noreferrer" class="project-link-btn">
-                              <i class="fa-brands fa-github"></i>
-                              <span>Repo</span>
-                           </a>
-                        </div>
+            <!-- PROJECT 3: DORREX -->
+            <div class="project-card-refined mb-0 wow fadeInUp" data-wow-delay=".3s" id="project-dorrex">
+               <div class="project-header-bar">
+                  <div class="project-header-left">
+                     <div class="window-dots"><span></span><span></span><span></span></div>
+                     <span class="project-id-tag">sys://ml.dorrex.forecast</span>
+                  </div>
+                  <span class="mono-badge bronze" data-i18n="dorrex_badge">ML ENGINE</span>
+               </div>
+               <div class="project-body">
+                  <h3 class="project-main-title" data-i18n-html="dorrex_title">Dorrex &mdash; Market Predictive ML Engine</h3>
+                  <p class="project-brief" data-i18n="dorrex_brief">
+                     Quantitative financial predictive system combining recurrent neural networks (LSTM) with multi-source market sentiment signals for cryptocurrency trend probability modeling.
+                  </p>
+                  <div style="background: var(--bg-deep); padding: 14px; border-radius: 4px; border: 1px solid var(--border-subtle); margin-bottom: 20px;">
+                     <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-bronze-light); margin-bottom: 6px;" data-i18n="data_pipeline_label">DATA PIPELINE:</div>
+                     <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-cream);" data-i18n-html="dorrex_pipeline" dir="ltr">
+                        Exchange WebSocket &rarr; Rolling Window Normalization &rarr; Multi-Layer LSTM &rarr; Confidence Intervals
                      </div>
                   </div>
-               </div>
-
-               <!-- SEBASTIAN -->
-               <div class="col-lg-6">
-                  <div class="project-card-refined h-100 wow fadeInUp" data-wow-delay=".4s" id="project-sebastian">
-                     <div class="project-header-bar">
-                        <div class="project-header-left">
-                           <div class="window-dots"><span></span><span></span><span></span></div>
-                           <span class="project-id-tag">sys://edge.sebastian.automation</span>
-                        </div>
-                        <span class="mono-badge bronze">EDGE AUTOMATION</span>
+                  <div class="project-footer-bar">
+                     <div class="project-stack-tags">
+                        <span class="mono-badge">Python</span>
+                        <span class="mono-badge">TensorFlow</span>
+                        <span class="mono-badge">LSTM</span>
+                        <span class="mono-badge">Time-Series</span>
+                        <span class="mono-badge">Pandas</span>
                      </div>
-                     <div class="project-body d-flex flex-column h-100">
-                        <h3 class="project-main-title" style="font-size: 1.4rem;">Sebastian &mdash; Edge ML Automation Engine</h3>
-                        <p class="project-brief" style="font-size: 0.94rem;">
-                           Cross-platform automation framework powered by lightweight machine learning models for real-time telemetry processing, anomaly detection, and automated event dispatch.
-                        </p>
-                        <div style="background: var(--bg-deep); padding: 14px; border-radius: 4px; border: 1px solid var(--border-subtle); margin-bottom: 20px;">
-                           <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-bronze-light); margin-bottom: 6px;">DATA PIPELINE:</div>
-                           <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-cream);">
-                              Sensor Stream &rarr; Feature Extraction &rarr; On-Device Inference &rarr; Reactive Webhook Trigger
-                           </div>
-                        </div>
-                        <div class="project-footer-bar mt-auto">
-                           <div class="project-stack-tags">
-                              <span class="mono-badge">Python</span>
-                              <span class="mono-badge">Edge ML</span>
-                              <span class="mono-badge">FastAPI</span>
-                              <span class="mono-badge">Linux</span>
-                           </div>
-                           <a href="https://github.com/dXRtinXb" target="_blank" rel="noopener noreferrer" class="project-link-btn">
-                              <i class="fa-brands fa-github"></i>
-                              <span>Repo</span>
-                           </a>
-                        </div>
-                     </div>
+                     <a href="https://github.com/dXRtinXb" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                        <i class="fa-brands fa-github"></i>
+                        <span data-i18n="repo_btn">Repo</span>
+                     </a>
                   </div>
                </div>
-
             </div>
 
          </div>
@@ -731,9 +705,9 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
          <div class="container">
             
             <div class="section-header-editorial wow fadeInUp" data-wow-delay=".2s">
-               <div class="section-index-tag">03 // SYSTEM MATRIX</div>
-               <h2 class="section-title-editorial">Technical Dependencies &amp; Stack Architecture</h2>
-               <p class="section-subtitle-editorial">
+               <div class="section-index-tag" data-i18n="sec3_tag">03 // SYSTEM MATRIX</div>
+               <h2 class="section-title-editorial" data-i18n="sec3_title">Technical Dependencies &amp; Stack Architecture</h2>
+               <p class="section-subtitle-editorial" data-i18n="sec3_subtitle">
                   Structured technical tooling organized by architectural layer. Focused on deterministic execution, high retrieval accuracy, and backend reliability.
                </p>
             </div>
@@ -744,7 +718,7 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                <div class="tech-group-card wow fadeInUp" data-wow-delay=".2s" id="stack-llm">
                   <div class="tech-group-header">
                      <i class="fas fa-brain"></i>
-                     <span class="tech-group-title">LLM Engineering</span>
+                     <span class="tech-group-title" data-i18n="stack_grp1_title">LLM Engineering</span>
                   </div>
                   <div class="tech-item-list">
                      <div class="tech-item-row">
@@ -752,28 +726,28 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                            <img src="assets/img/icons/python.png" alt="Python" class="tech-icon-img">
                            <span class="tech-item-name">Python 3.12</span>
                         </div>
-                        <span class="tech-item-role">Primary Runtime</span>
+                        <span class="tech-item-role" data-i18n="role_primary_runtime">Primary Runtime</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <i class="fas fa-project-diagram" style="color: var(--accent-bronze-light); width: 20px; text-align: center;"></i>
                            <span class="tech-item-name">LangGraph</span>
                         </div>
-                        <span class="tech-item-role">Stateful Agents</span>
+                        <span class="tech-item-role" data-i18n="role_stateful_agents">Stateful Agents</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <i class="fas fa-microchip" style="color: var(--accent-bronze-light); width: 20px; text-align: center;"></i>
                            <span class="tech-item-name">Ollama &amp; vLLM</span>
                         </div>
-                        <span class="tech-item-role">Local Inference</span>
+                        <span class="tech-item-role" data-i18n="role_local_inference">Local Inference</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <i class="fas fa-layer-group" style="color: var(--accent-bronze-light); width: 20px; text-align: center;"></i>
                            <span class="tech-item-name">DeepSeek / LLaMA-3</span>
                         </div>
-                        <span class="tech-item-role">Frontier Models</span>
+                        <span class="tech-item-role" data-i18n="role_frontier_models">Frontier Models</span>
                      </div>
                   </div>
                </div>
@@ -782,7 +756,7 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                <div class="tech-group-card wow fadeInUp" data-wow-delay=".3s" id="stack-rag">
                   <div class="tech-group-header">
                      <i class="fas fa-database"></i>
-                     <span class="tech-group-title">AI Systems &amp; RAG</span>
+                     <span class="tech-group-title" data-i18n="stack_grp2_title">AI Systems &amp; RAG</span>
                   </div>
                   <div class="tech-item-list">
                      <div class="tech-item-row">
@@ -790,28 +764,28 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                            <i class="fas fa-vector-square" style="color: var(--accent-bronze-light); width: 20px; text-align: center;"></i>
                            <span class="tech-item-name">Hybrid RAG</span>
                         </div>
-                        <span class="tech-item-role">Dense + BM25</span>
+                        <span class="tech-item-role" data-i18n="role_dense_bm25">Dense + BM25</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <i class="fas fa-filter" style="color: var(--accent-bronze-light); width: 20px; text-align: center;"></i>
                            <span class="tech-item-name">Cross-Encoders</span>
                         </div>
-                        <span class="tech-item-role">Semantic Reranker</span>
+                        <span class="tech-item-role" data-i18n="role_reranker">Semantic Reranker</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <img src="assets/img/icons/pandas.png" alt="Pandas" class="tech-icon-img">
                            <span class="tech-item-name">Pandas / NumPy</span>
                         </div>
-                        <span class="tech-item-role">Vector Wrangling</span>
+                        <span class="tech-item-role" data-i18n="role_vector_wrangling">Vector Wrangling</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <i class="fas fa-memory" style="color: var(--accent-bronze-light); width: 20px; text-align: center;"></i>
                            <span class="tech-item-name">Chroma / Qdrant</span>
                         </div>
-                        <span class="tech-item-role">Vector Indexing</span>
+                        <span class="tech-item-role" data-i18n="role_vector_indexing">Vector Indexing</span>
                      </div>
                   </div>
                </div>
@@ -820,7 +794,7 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                <div class="tech-group-card wow fadeInUp" data-wow-delay=".4s" id="stack-ml">
                   <div class="tech-group-header">
                      <i class="fas fa-chart-network"></i>
-                     <span class="tech-group-title">Applied ML &amp; Data</span>
+                     <span class="tech-group-title" data-i18n="stack_grp3_title">Applied ML &amp; Data</span>
                   </div>
                   <div class="tech-item-list">
                      <div class="tech-item-row">
@@ -828,28 +802,28 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                            <img src="assets/img/icons/google-tensorflow-icon.png" alt="TensorFlow" class="tech-icon-img">
                            <span class="tech-item-name">TensorFlow</span>
                         </div>
-                        <span class="tech-item-role">Neural Modeling</span>
+                        <span class="tech-item-role" data-i18n="role_neural_modeling">Neural Modeling</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <img src="assets/img/icons/ml.png" alt="ML" class="tech-icon-img">
                            <span class="tech-item-name">Scikit-Learn</span>
                         </div>
-                        <span class="tech-item-role">Classification / Reg</span>
+                        <span class="tech-item-role" data-i18n="role_classification">Classification / Reg</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <i class="fas fa-spider" style="color: var(--accent-bronze-light); width: 20px; text-align: center;"></i>
                            <span class="tech-item-name">Playwright / Crawl</span>
                         </div>
-                        <span class="tech-item-role">Data Extraction</span>
+                        <span class="tech-item-role" data-i18n="role_data_extraction">Data Extraction</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <img src="assets/img/icons/js.svg" alt="JavaScript" class="tech-icon-img">
                            <span class="tech-item-name">JavaScript (ES6+)</span>
                         </div>
-                        <span class="tech-item-role">Interactive Web</span>
+                        <span class="tech-item-role" data-i18n="role_interactive_web">Interactive Web</span>
                      </div>
                   </div>
                </div>
@@ -858,7 +832,7 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                <div class="tech-group-card wow fadeInUp" data-wow-delay=".5s" id="stack-backend">
                   <div class="tech-group-header">
                      <i class="fas fa-server"></i>
-                     <span class="tech-group-title">Backend &amp; Infrastructure</span>
+                     <span class="tech-group-title" data-i18n="stack_grp4_title">Backend &amp; Infrastructure</span>
                   </div>
                   <div class="tech-item-list">
                      <div class="tech-item-row">
@@ -866,28 +840,28 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                            <i class="fas fa-bolt" style="color: var(--accent-bronze-light); width: 20px; text-align: center;"></i>
                            <span class="tech-item-name">FastAPI</span>
                         </div>
-                        <span class="tech-item-role">Async REST / SSE</span>
+                        <span class="tech-item-role" data-i18n="role_fastapi">Async REST / SSE</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <img src="assets/img/icons/django-logo-negative.jpg" alt="Django" class="tech-icon-img">
                            <span class="tech-item-name">Django</span>
                         </div>
-                        <span class="tech-item-role">Enterprise Backend</span>
+                        <span class="tech-item-role" data-i18n="role_django">Enterprise Backend</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <img src="assets/img/icons/Linux_Logo_in_Linux_Libertine_Font.svg.png" alt="Linux" class="tech-icon-img">
                            <span class="tech-item-name">Linux / Kali</span>
                         </div>
-                        <span class="tech-item-role">Host Environment</span>
+                        <span class="tech-item-role" data-i18n="role_linux">Host Environment</span>
                      </div>
                      <div class="tech-item-row">
                         <div class="tech-item-meta">
                            <img src="assets/img/icons/Git-Icon-White.png" alt="Git" class="tech-icon-img">
                            <span class="tech-item-name">Git &amp; GitHub</span>
                         </div>
-                        <span class="tech-item-role">CI/CD &amp; Versioning</span>
+                        <span class="tech-item-role" data-i18n="role_git">CI/CD &amp; Versioning</span>
                      </div>
                   </div>
                </div>
@@ -903,9 +877,9 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
          <div class="container">
             
             <div class="section-header-editorial wow fadeInUp" data-wow-delay=".2s">
-               <div class="section-index-tag">04 // PROVENANCE &amp; TIMELINE</div>
-               <h2 class="section-title-editorial">Engineering Provenance &amp; Academic Background</h2>
-               <p class="section-subtitle-editorial">
+               <div class="section-index-tag" data-i18n="sec4_tag">04 // PROVENANCE &amp; TIMELINE</div>
+               <h2 class="section-title-editorial" data-i18n="sec4_title">Engineering Provenance &amp; Academic Background</h2>
+               <p class="section-subtitle-editorial" data-i18n="sec4_subtitle">
                   Chronological record of software development responsibilities, international competition placements, and system foundations.
                </p>
             </div>
@@ -914,41 +888,41 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                
                <!-- Column 1: Engineering Experience -->
                <div class="wow fadeInLeft" data-wow-delay=".3s">
-                  <h3 class="resume-column-title"><i class="fas fa-code-commit"></i> Engineering Experience &amp; Competitions</h3>
+                  <h3 class="resume-column-title"><i class="fas fa-code-commit"></i> <span data-i18n="exp_col1_title">Engineering Experience &amp; Competitions</span></h3>
                   <div class="timeline-commit-stream">
                      
                      <div class="commit-item">
                         <div class="commit-meta">
-                           <span>COMMIT: 9a4f21e</span>
+                           <span data-i18n="commit_9a4f">COMMIT: 9a4f21e</span>
                            <span class="mono-badge">2025</span>
                         </div>
-                        <h4 class="commit-title">Backend Developer &amp; Technical Systems</h4>
-                        <div class="commit-institute">Elecomp 28</div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;">
+                        <h4 class="commit-title" data-i18n="job1_title">Backend Developer &amp; Technical Systems</h4>
+                        <div class="commit-institute" data-i18n="job1_institute">Elecomp 28</div>
+                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;" data-i18n="job1_desc">
                            Engineered backend services, optimized database queries, and collaborated on technical presentation systems for Iran's premier electronics &amp; computer exhibition.
                         </p>
                      </div>
 
                      <div class="commit-item">
                         <div class="commit-meta">
-                           <span>COMMIT: 7b31c90</span>
-                           <span class="mono-badge">2025</span>
+                           <span data-i18n="commit_7b31">COMMIT: 7b31c90</span>
+                           <span class="mono-badge">2025 &mdash; 2026</span>
                         </div>
-                        <h4 class="commit-title">Third Place Winner &mdash; System Visualizations</h4>
-                        <div class="commit-institute">Parsons, The New School</div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;">
-                           Awarded third place internationally for analytical information design, mathematical visual hierarchy, and technical concept communication.
+                        <h4 class="commit-title" data-i18n-html="job2_title">AI Systems Engineer &amp; Developer &mdash; Project RAYAN</h4>
+                        <div class="commit-institute" data-i18n="job2_institute">Elecomp 29</div>
+                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;" data-i18n="job2_desc">
+                           Architected and deployed autonomous multi-agent systems and real-time backend intelligence workflows showcasing the RAYAN enterprise agent at Iran's premier technology exhibition.
                         </p>
                      </div>
 
                      <div class="commit-item">
                         <div class="commit-meta">
-                           <span>COMMIT: 3d18e24</span>
+                           <span data-i18n="commit_3d18">COMMIT: 3d18e24</span>
                            <span class="mono-badge">2020 &mdash; 2023</span>
                         </div>
-                        <h4 class="commit-title">Junior Technical &amp; Digital Designer</h4>
-                        <div class="commit-institute">Independent Contracts</div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;">
+                        <h4 class="commit-title" data-i18n="job3_title">Junior Technical &amp; Digital Designer</h4>
+                        <div class="commit-institute" data-i18n="job3_institute">Independent Contracts</div>
+                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;" data-i18n="job3_desc">
                            Developed custom digital identities, user interfaces, and structured layout systems, establishing strong aesthetic foundations that inform current AI UX design.
                         </p>
                      </div>
@@ -958,41 +932,41 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
 
                <!-- Column 2: Education & Technical Foundations -->
                <div class="wow fadeInRight" data-wow-delay=".3s">
-                  <h3 class="resume-column-title"><i class="fas fa-graduation-cap"></i> Technical Education &amp; Foundations</h3>
+                  <h3 class="resume-column-title"><i class="fas fa-graduation-cap"></i> <span data-i18n="exp_col2_title">Technical Education &amp; Foundations</span></h3>
                   <div class="timeline-commit-stream">
                      
                      <div class="commit-item">
                         <div class="commit-meta">
-                           <span>COURSEWORK</span>
+                           <span data-i18n="meta_coursework">COURSEWORK</span>
                            <span class="mono-badge">2023 &mdash; 2024</span>
                         </div>
-                        <h4 class="commit-title">Advanced Programming &amp; Computer Systems</h4>
-                        <div class="commit-institute">Mojtamae Fani (Tehran Institute of Technology)</div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;">
+                        <h4 class="commit-title" data-i18n="edu1_title">Advanced Programming &amp; Computer Systems</h4>
+                        <div class="commit-institute" data-i18n="edu1_institute">Mojtamae Fani (Tehran Institute of Technology)</div>
+                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;" data-i18n="edu1_desc">
                            In-depth computer science foundations covering object-oriented programming, data structures, algorithms, and backend web frameworks.
                         </p>
                      </div>
 
                      <div class="commit-item">
                         <div class="commit-meta">
-                           <span>SPECIALIZATION</span>
+                           <span data-i18n="meta_specialization">SPECIALIZATION</span>
                            <span class="mono-badge">2024 &mdash; 2025</span>
                         </div>
-                        <h4 class="commit-title">Design &amp; Technology Systems</h4>
-                        <div class="commit-institute">Advanced Applied Academy</div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;">
+                        <h4 class="commit-title" data-i18n="edu2_title">Design &amp; Technology Systems</h4>
+                        <div class="commit-institute" data-i18n="edu2_institute">Advanced Applied Academy</div>
+                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;" data-i18n="edu2_desc">
                            Rigorous training combining technical web architecture, responsive layout engineering, and user interaction mechanics.
                         </p>
                      </div>
 
                      <div class="commit-item">
                         <div class="commit-meta">
-                           <span>SPECIALIZATION</span>
+                           <span data-i18n="meta_research">SPECIALIZATION</span>
                            <span class="mono-badge">2024 &mdash; 2025</span>
                         </div>
-                        <h4 class="commit-title">Applied Machine Learning &amp; Neural Retraining</h4>
-                        <div class="commit-institute">Autonomous Research &amp; Self-Directed Projects</div>
-                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;">
+                        <h4 class="commit-title" data-i18n="edu3_title">Applied Machine Learning &amp; Neural Retraining</h4>
+                        <div class="commit-institute" data-i18n="edu3_institute">Autonomous Research &amp; Self-Directed Projects</div>
+                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 6px;" data-i18n="edu3_desc">
                            Continuous self-directed research into transformer architectures, LangGraph state machines, vector embeddings, and autonomous agent loops.
                         </p>
                      </div>
@@ -1006,75 +980,14 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
       </section>
       <!-- EXPERIENCE & PROVENANCE SECTION END -->
 
-      <!-- INTERACTIVE TERMINAL INSPECTOR START -->
-      <section class="eng-section" id="terminal-section">
-         <div class="container">
-            
-            <div class="section-header-editorial wow fadeInUp" data-wow-delay=".2s">
-               <div class="section-index-tag">05 // CLI ENVIRONMENT</div>
-               <h2 class="section-title-editorial">Interactive System Inspector</h2>
-               <p class="section-subtitle-editorial">
-                  Query system architecture specifications, runtime health status, and live engineering specifications via an interactive terminal.
-               </p>
-            </div>
-
-            <div class="terminal-card wow fadeInUp" data-wow-delay=".3s">
-               <div class="terminal-header">
-                  <div>
-                     <span class="status-dot me-2"></span>
-                     <span>bash &mdash; artin@ai-systems: ~ (x86_64)</span>
-                  </div>
-                  <div>
-                     <span>SESSION_ID: #4A91B</span>
-                  </div>
-               </div>
-
-               <!-- Terminal Logs Container -->
-               <div class="terminal-body" id="term-logs">
-                  <div style="color: var(--text-dim);">AI Systems Engineering CLI v2.4.0 [x86_64-debian-linux]</div>
-                  <div style="color: var(--text-dim);">Type <span style="color: var(--accent-bronze-light);">"help"</span> or click quick command chips below to inspect system modules.</div>
-                  <div style="margin-top: 10px; color: var(--text-cream);">
-                     <span style="color: var(--accent-bronze-light); font-weight: 600;">artin@ai-systems:~$</span> status
-                  </div>
-                  <div style="color: var(--text-cream); white-space: pre-wrap;">[SYS_HEALTH]
-● Runtime: Operational (Python 3.12 / LangGraph 0.2 / FastAPI)
-● Host: 0.0.0.0:3000 // Container: Linux Debian
-● Active Pipelines: 4 autonomous agent clusters initialized
-● Retrieval Index: BM25 + Cross-Encoder Reranker active
-● Latency: ~14ms avg inference overhead</div>
-               </div>
-
-               <!-- Interactive Input Line -->
-               <div class="terminal-input-row">
-                  <span class="terminal-prompt-symbol">artin@ai-systems:~$</span>
-                  <input type="text" id="term-cmd-input" class="terminal-input-field" placeholder="Type a command (e.g., help, cat rayan.arch, status, stack, contact)..." autocomplete="off" spellcheck="false">
-               </div>
-
-               <!-- Quick Run Chips -->
-               <div class="terminal-shortcuts">
-                  <span style="font-size: 0.68rem; color: var(--text-dim); margin-right: 4px; align-self: center;">SHORTCUTS:</span>
-                  <button type="button" class="term-btn" data-cmd="help">help</button>
-                  <button type="button" class="term-btn" data-cmd="status">status</button>
-                  <button type="button" class="term-btn" data-cmd="cat rayan.arch">cat rayan.arch</button>
-                  <button type="button" class="term-btn" data-cmd="cat wie.spec">cat wie.spec</button>
-                  <button type="button" class="term-btn" data-cmd="stack">stack</button>
-                  <button type="button" class="term-btn" data-cmd="contact">contact</button>
-                  <button type="button" class="term-btn" data-cmd="clear">clear</button>
-               </div>
-            </div>
-
-         </div>
-      </section>
-      <!-- INTERACTIVE TERMINAL INSPECTOR END -->
-
       <!-- CONTACT SECTION START -->
       <section class="eng-section" id="contact-section">
          <div class="container">
             
             <div class="section-header-editorial wow fadeInUp" data-wow-delay=".2s">
-               <div class="section-index-tag">06 // DISPATCH &amp; CONTACT</div>
-               <h2 class="section-title-editorial">Initialize Direct Communication</h2>
-               <p class="section-subtitle-editorial">
+               <div class="section-index-tag" data-i18n="sec5_tag">05 // DISPATCH &amp; CONTACT</div>
+               <h2 class="section-title-editorial" data-i18n="sec5_title">Initialize Direct Communication</h2>
+               <p class="section-subtitle-editorial" data-i18n="sec5_subtitle">
                   Available for autonomous AI agent architectures, neural retrieval systems engineering, and contract research collaborations.
                </p>
             </div>
@@ -1083,7 +996,7 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                
                <!-- Left: Contact Details Card -->
                <div class="contact-info-card wow fadeInLeft" data-wow-delay=".3s">
-                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-bronze-light); margin-bottom: 20px;">
+                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-bronze-light); margin-bottom: 20px;" data-i18n="contact_card_title">
                      // DIRECT CHANNELS
                   </div>
 
@@ -1092,10 +1005,10 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                         <i class="fal fa-envelope"></i>
                      </div>
                      <div>
-                        <div class="contact-meta-label">Direct Email</div>
-                        <a href="mailto:aabbassin@gmail.com" class="contact-meta-val">aabbassin@gmail.com</a>
+                        <div class="contact-meta-label" data-i18n="contact_email_label">Direct Email</div>
+                        <a href="mailto:aabbassin@gmail.com" class="contact-meta-val" dir="ltr">aabbassin@gmail.com</a>
                         <div style="margin-top: 4px;">
-                           <button type="button" class="term-btn copy-email-btn" style="padding: 2px 6px;">Copy Email Address</button>
+                           <button type="button" class="term-btn copy-email-btn" style="padding: 2px 6px;" data-i18n="copy_email_btn">Copy Email Address</button>
                         </div>
                      </div>
                   </div>
@@ -1105,8 +1018,8 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                         <i class="fal fa-phone-alt"></i>
                      </div>
                      <div>
-                        <div class="contact-meta-label">Telephone</div>
-                        <a href="tel:+989374176731" class="contact-meta-val">+98 937 417 673 1</a>
+                        <div class="contact-meta-label" data-i18n="contact_phone_label">Telephone</div>
+                        <a href="tel:+989374176731" class="contact-meta-val" dir="ltr">+98 937 417 673 1</a>
                      </div>
                   </div>
 
@@ -1115,8 +1028,8 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                         <i class="fa-brands fa-linkedin-in"></i>
                      </div>
                      <div>
-                        <div class="contact-meta-label">LinkedIn Network</div>
-                        <a href="https://www.linkedin.com/in/artin-abbasi-69714a384/" target="_blank" rel="noopener noreferrer" class="contact-meta-val">
+                        <div class="contact-meta-label" data-i18n="contact_linkedin_label">LinkedIn Network</div>
+                        <a href="https://www.linkedin.com/in/artin-abbasi-69714a384/" target="_blank" rel="noopener noreferrer" class="contact-meta-val" dir="ltr">
                            artin-abbasi-69714a384 &rarr;
                         </a>
                      </div>
@@ -1127,24 +1040,24 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                         <i class="fa-brands fa-github"></i>
                      </div>
                      <div>
-                        <div class="contact-meta-label">GitHub Repositories</div>
-                        <a href="https://github.com/dXRtinXb" target="_blank" rel="noopener noreferrer" class="contact-meta-val">
+                        <div class="contact-meta-label" data-i18n="contact_github_label">GitHub Repositories</div>
+                        <a href="https://github.com/dXRtinXb" target="_blank" rel="noopener noreferrer" class="contact-meta-val" dir="ltr">
                            github.com/dXRtinXb &rarr;
                         </a>
                      </div>
                   </div>
 
                   <div style="margin-top: 24px; padding: 14px; background: var(--bg-deep); border: 1px solid var(--border-subtle); border-radius: 4px;">
-                     <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 4px;">AVAILABILITY STATUS:</div>
+                     <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 4px;" data-i18n="avail_label">AVAILABILITY STATUS:</div>
                      <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-cream); display: flex; align-items: center; gap: 8px;">
-                        <span class="status-dot"></span> Open for AI Systems Architecture &amp; RAG Contracts
+                        <span class="status-dot"></span> <span data-i18n="avail_status">Open for AI Systems Architecture &amp; RAG Contracts</span>
                      </div>
                   </div>
                </div>
 
                <!-- Right: Message Dispatch Console Form -->
                <div class="contact-info-card wow fadeInRight" data-wow-delay=".3s">
-                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-bronze-light); margin-bottom: 20px;">
+                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-bronze-light); margin-bottom: 20px;" data-i18n="contact_form_title">
                      // TRANSMIT DISPATCH
                   </div>
 
@@ -1153,31 +1066,31 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                      <div class="row g-3">
                         <div class="col-md-6">
                            <div class="eng-form-group">
-                              <label class="eng-form-label" for="conName">Full Name / Identity</label>
-                              <input type="text" name="conName" id="conName" class="eng-form-control" placeholder="Jane Doe" required>
+                              <label class="eng-form-label" for="conName" data-i18n="form_name_label">Full Name / Identity</label>
+                              <input type="text" name="conName" id="conName" class="eng-form-control" placeholder="Jane Doe" data-i18n-ph="form_name_ph" required>
                            </div>
                         </div>
                         <div class="col-md-6">
                            <div class="eng-form-group">
-                              <label class="eng-form-label" for="conEmail">Email Address</label>
-                              <input type="email" name="conEmail" id="conEmail" class="eng-form-control" placeholder="jane@organization.com" required>
+                              <label class="eng-form-label" for="conEmail" data-i18n="form_email_label">Email Address</label>
+                              <input type="email" name="conEmail" id="conEmail" class="eng-form-control" placeholder="jane@organization.com" data-i18n-ph="form_email_ph" required>
                            </div>
                         </div>
                      </div>
 
                      <div class="eng-form-group">
-                        <label class="eng-form-label" for="conService">Project Subject / Focus</label>
-                        <input type="text" name="conService" id="conService" class="eng-form-control" placeholder="e.g. Multi-Agent System Architecture / RAG Consultation">
+                        <label class="eng-form-label" for="conService" data-i18n="form_service_label">Project Subject / Focus</label>
+                        <input type="text" name="conService" id="conService" class="eng-form-control" placeholder="e.g. Multi-Agent System Architecture / RAG Consultation" data-i18n-ph="form_service_ph">
                      </div>
 
                      <div class="eng-form-group">
-                        <label class="eng-form-label" for="conMessage">System Requirements / Message</label>
-                        <textarea name="conMessage" id="conMessage" class="eng-form-control" placeholder="Describe the scope, objectives, or technical challenges..." required></textarea>
+                        <label class="eng-form-label" for="conMessage" data-i18n="form_msg_label">System Requirements / Message</label>
+                        <textarea name="conMessage" id="conMessage" class="eng-form-control" placeholder="Describe the scope, objectives, or technical challenges..." data-i18n-ph="form_msg_ph" required></textarea>
                      </div>
 
                      <button type="submit" class="btn-eng-primary w-100 justify-content-center" id="btn-submit-contact">
                         <i class="far fa-paper-plane me-2"></i>
-                        <span>Transmit Message &rarr;</span>
+                        <span data-i18n="form_submit_btn">Transmit Message &rarr;</span>
                      </button>
 
                   </form>
@@ -1195,15 +1108,15 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
             <div class="modal-content" style="background: var(--bg-surface); border: 1px solid var(--border-bronze); color: var(--text-cream);">
                <div class="modal-header" style="border-bottom: 1px solid var(--border-subtle);">
                   <span class="modal-title font-monospace" style="color: var(--accent-bronze-light);">
-                     <i class="fas fa-check-circle me-2"></i><strong>Transmission Received</strong>
+                     <i class="fas fa-check-circle me-2"></i><strong data-i18n="modal_success_title">Transmission Received</strong>
                   </span>
                   <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body" style="font-size: 0.92rem; line-height: 1.6;">
-                  <p>Thank you for initiating communication. Your dispatch has been logged in the system and I will respond to your provided email address shortly.</p>
+                  <p data-i18n="modal_success_desc">Thank you for initiating communication. Your dispatch has been logged in the system and I will respond to your provided email address shortly.</p>
                </div>
                <div class="modal-footer" style="border-top: 1px solid var(--border-subtle);">
-                  <button type="button" class="btn-eng-secondary" data-bs-dismiss="modal">Acknowledge &amp; Close</button>
+                  <button type="button" class="btn-eng-secondary" data-bs-dismiss="modal" data-i18n="modal_success_close">Acknowledge &amp; Close</button>
                </div>
             </div>
          </div>
@@ -1216,15 +1129,15 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
             <div class="modal-content" style="background: var(--bg-surface); border: 1px solid rgba(238, 70, 70, 0.4); color: var(--text-cream);">
                <div class="modal-header" style="border-bottom: 1px solid var(--border-subtle);">
                   <span class="modal-title font-monospace" style="color: #E26D6D;">
-                     <i class="fas fa-exclamation-triangle me-2"></i><strong>Transmission Notice</strong>
+                     <i class="fas fa-exclamation-triangle me-2"></i><strong data-i18n="modal_fail_title">Transmission Notice</strong>
                   </span>
                   <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body" style="font-size: 0.92rem; line-height: 1.6;">
-                  <p>Transmission could not be dispatched automatically. Please transmit directly via email to: <strong style="color: var(--text-primary);">aabbassin@gmail.com</strong>.</p>
+                  <p data-i18n-html="modal_fail_desc">Transmission could not be dispatched automatically. Please transmit directly via email to: <strong style="color: var(--text-primary);">aabbassin@gmail.com</strong>.</p>
                </div>
                <div class="modal-footer" style="border-top: 1px solid var(--border-subtle);">
-                  <button type="button" class="btn-eng-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn-eng-secondary" data-bs-dismiss="modal" data-i18n="modal_fail_close">Close</button>
                </div>
             </div>
          </div>
@@ -1245,36 +1158,36 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
                   </div>
                   <div class="brand-title">
                      <span class="brand-name">Artin Abbasi</span>
-                     <span class="brand-role">// AI Systems Engineer</span>
+                     <span class="brand-role" data-i18n="brand_role_footer">// AI Systems Engineer</span>
                   </div>
                </a>
-               <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 10px; max-width: 440px;">
+               <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 10px; max-width: 440px;" data-i18n="footer_tagline">
                   Autonomous Agents &bull; Hybrid RAG &bull; Neural Retrieval &bull; Production Async Backends
                </p>
             </div>
 
             <div class="col-md-6 text-center text-md-end">
                <div class="d-flex justify-content-center justify-content-md-end gap-3 mb-3">
-                  <a href="https://github.com/dXRtinXb" target="_blank" rel="noopener noreferrer" class="hero-social-link">
+                  <a href="https://github.com/dXRtinXb" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="GitHub">
                      <i class="fa-brands fa-github"></i>
                   </a>
-                  <a href="https://www.linkedin.com/in/artin-abbasi-69714a384/" target="_blank" rel="noopener noreferrer" class="hero-social-link">
+                  <a href="https://www.linkedin.com/in/artin-abbasi-69714a384/" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="LinkedIn">
                      <i class="fa-brands fa-linkedin-in"></i>
                   </a>
-                  <a href="mailto:aabbassin@gmail.com" class="hero-social-link">
+                  <a href="mailto:aabbassin@gmail.com" class="hero-social-link" aria-label="Email">
                      <i class="fal fa-envelope"></i>
                   </a>
                </div>
                <div class="mono-badge bronze">
                   <span class="status-dot"></span>
-                  <span>SYS: ALL SYSTEMS OPERATIONAL</span>
+                  <span data-i18n="footer_sys_status">SYS: ALL SYSTEMS OPERATIONAL</span>
                </div>
             </div>
 
          </div>
 
          <div class="footer-meta-line">
-            <span>&copy; Artin Abbasi. Engineered with classical editorial principles &amp; open standards.</span>
+            <span data-i18n="footer_meta_copyright">&copy; Artin Abbasi. Engineered with classical editorial principles &amp; open standards.</span>
             <span>HOST: 0.0.0.0:3000 // LINUX RUNTIME</span>
          </div>
 
@@ -1283,7 +1196,7 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
    <!-- FOOTER AREA END -->
 
    <!-- Notification Toast -->
-   <div id="copy-toast" class="copy-toast">
+   <div id="copy-toast" class="copy-toast" data-i18n="copy_toast">
       Copied to clipboard
    </div>
 
@@ -1306,6 +1219,9 @@ SYNTHESIS &amp; GROUNDED RESEARCH REPORT</pre>
    <script src="assets/js/magnific-popup.js"></script>
    <script src="assets/js/validate.min.js"></script>
    <script src="assets/js/main.js"></script>
+
+   <!-- Internationalization & Persian Localization Engine -->
+   <script src="assets/js/i18n.js"></script>
 
    <!-- Bespoke Engineering Canvas & Interactive CLI Inspector -->
    <script src="assets/js/engineering-canvas.js"></script>
